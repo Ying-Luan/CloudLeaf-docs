@@ -1,0 +1,141 @@
+---
+title: Development
+description: Project overview, contributing guide, and about the authors
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+## Project Overview
+
+### Tech Stack
+
+| Category | Technology |
+| ------ | ------ |
+| Framework | [Plasmo](https://www.plasmo.com/) |
+| UI | React + Tailwind CSS v4 |
+| Language | TypeScript |
+| State Management | Zustand + Immer |
+| Persistence | @plasmohq/storage |
+
+### Local Setup
+
+```bash
+git clone https://github.com/Ying-Luan/CloudLeaf.git
+cd CloudLeaf
+npm install
+
+# Start dev server
+npm run dev          # Chrome
+npm run dev:edge     # Microsoft Edge
+npm run dev:firefox  # Firefox
+
+# Build for production
+npm run build          # Chrome
+npm run build:edge     # Microsoft Edge
+npm run build:firefox  # Firefox
+
+# Package for store
+npm run package          # Chrome
+npm run package:edge     # Microsoft Edge
+npm run package:firefox  # Firefox
+```
+
+### Project Structure
+
+<FileTree>
+
+- .github
+  - workflows/                 CI workflows
+- assets
+  - _locales
+    - en/                      English translations
+    - zh_CN/                   Chinese translations
+- scripts/                     Build helper scripts
+- src
+  - components/                UI components
+  - constants/                 Constants
+  - core
+    - bookmark/                Browser bookmark tree read/write
+    - sync
+      - cloud/                 Cloud sync orchestration
+      - local/                 Local file sync orchestration
+      - utils/                 Sync comparison utilities
+  - hooks/                     React Hooks
+  - i18n/                      Internationalization
+  - options/                   Settings page entry
+  - popup/                     Popup entry
+  - providers
+    - base/                    Provider base class
+    - gist/                    GitHub Gist provider
+    - http/                    HTTP provider base class
+    - local/                   Local file provider
+    - webdav/                  WebDAV provider
+  - sidepanel/                 Side panel entry
+  - store/                     State management & local storage
+  - tabs/                      Dev debug pages
+  - types/                     Type definitions
+  - utils/                     Utility functions
+- .gitignore
+- .prettierrc.mjs
+- env.d.ts
+- eslint.config.mts
+- LICENSE
+- package-lock.json            Dependency lock
+- package.json                 Project config
+- playwright.config.ts
+- postcss.config.mjs
+- PRIVACY.md
+- PRIVACY_zh.md
+- README.md
+- README_zh.md
+- tsconfig.json
+
+</FileTree>
+
+### Architecture
+
+```text
+Popup / Side Panel / Settings (UI)
+  └── hooks/                   State & side-effect encapsulation
+      └── core/sync/           Sync orchestration (cloud / local)
+          └── providers/       Storage backends (Gist / WebDAV / Local)
+              └── BaseProvider  → HttpProvider  → Concrete implementations
+```
+
+## Contributing
+
+We welcome all forms of contribution! Whether to the [code repo](https://github.com/Ying-Luan/CloudLeaf) or [docs repo](https://github.com/Ying-Luan/CloudLeaf-docs) — filing issues, submitting pull requests, or joining discussions — every contribution is appreciated.
+
+### Filing Issues
+
+Submit at [GitHub Issues](https://github.com/Ying-Luan/CloudLeaf/issues) with the following information:
+
+- Browser and version
+- Steps to reproduce
+- Expected vs. actual behavior
+
+### Pull Requests
+
+1. Fork the repository
+2. Create a new branch
+3. Ensure `npm run lint` passes
+4. Submit a PR with a description of your changes
+
+## About Authors
+
+<div class="flex gap-12 flex-wrap justify-center items-start not-content">
+  <div class="flex flex-col items-center gap-3">
+    <img src="https://github.com/Ying-Luan.png" width="120" class="rounded-full" />
+    <div class="text-center">
+      <strong>Ying Luan</strong><br/>
+      <a href="https://github.com/Ying-Luan">GitHub</a> · <a href="mailto:3433800035@qq.com">Email</a>
+    </div>
+  </div>
+  <div class="flex flex-col items-center gap-3">
+    <img src="https://github.com/KamikazEr101.png" width="120" class="rounded-full" />
+    <div class="text-center">
+      <strong>KamikazEr101</strong><br/>
+      <a href="https://github.com/KamikazEr101">GitHub</a> · <a href="mailto:1305990365@qq.com">Email</a>
+    </div>
+  </div>
+</div>

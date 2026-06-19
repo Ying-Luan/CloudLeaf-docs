@@ -1,0 +1,55 @@
+---
+title: 欢迎来到 CloudLeaf
+description: 浏览器书签云同步扩展。
+template: splash # Remove or comment out this line to display the site sidebar on this page.
+hero:
+  title: |
+    欢迎来到 <br>
+    <span
+      class="font-black text-transparent
+        bg-clip-text bg-linear-to-b
+        from-accent-700 to-accent-400
+        dark:from-accent-500 dark:to-accent-200"
+    >
+      CloudLeaf
+    </span>
+  tagline: 浏览器书签云同步扩展。
+  image:
+    file: ../../../assets/icon.png
+  actions:
+    - text: 快速开始
+      link: /zh-cn/guides/quick-start/
+      icon: right-arrow
+    - text: 在 GitHub 上查看
+      link: https://github.com/Ying-Luan/CloudLeaf
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## 为什么选择 CloudLeaf？
+
+<CardGrid stagger>
+	<Card title="多浏览器支持" icon="puzzle">
+		全面支持 `Chrome`、`Edge` 和 `Firefox`。
+	</Card>
+	<Card title="上传到 GitHub Gist" icon="github">
+		将书签同步到私有 Gist。
+	</Card>
+	<Card title="通过 WebDAV 上传" icon="server">
+		将书签同步到任何支持 WebDAV 的云存储（坚果云等）。
+	</Card>
+	<Card title="导出到本地文件" icon="download">
+		将书签下载为 JSON 文件。
+	</Card>
+	<Card title="从云端/本地导入" icon="add-document">
+		从 Gist、WebDAV 或本地文件恢复书签。
+	</Card>
+  <Card title="冲突检测" icon="warning">
+		云端较新时阻止意外覆盖。
+	</Card>
+  <Card title="预览模式" icon="magnifier">
+		导入前查看云端书签。
+	</Card>
+</CardGrid>

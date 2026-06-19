@@ -1,0 +1,53 @@
+---
+title: 快速开始
+description: 安装 CloudLeaf 并完成首次书签同步
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+## 安装
+
+使用以下链接或从对应浏览器的扩展商店搜索「CloudLeaf」安装即可，无需额外配置。
+
+| 浏览器 | 安装方式 |
+| -------- | ---------- |
+| Chrome | [Chrome 应用商店](https://chrome.google.com/webstore/detail/knpkebnhpcbklnknkcpgkiochlimhcoi) |
+| Edge | [Chrome 应用商店](https://chrome.google.com/webstore/detail/knpkebnhpcbklnknkcpgkiochlimhcoi) |
+| Firefox | [Firefox 附加组件](https://addons.mozilla.org/zh-CN/firefox/addon/cloudleaf/) |
+
+如果你需要开发版或手动安装，参考 [开发指南](/reference/zh-cn/development)。
+
+## 首次使用
+
+安装后，点击浏览器工具栏的 CloudLeaf 图标，弹出操作面板。
+
+![extension](../../../../assets/extension.png)
+![popup](../../../../assets/zh-cn/popup.png)
+
+首次使用时需要先配置**同步源**，然后即可上传书签。
+
+<Steps>
+
+1. 配置同步源
+
+   CloudLeaf 支持 GitHub Gist 和 WebDAV 两种同步方式。以 Gist 为例，你需要：
+
+   * 一个 GitHub 账号
+   * 创建 Personal Access Token（勾选 `gist` 权限）
+   * 创建一个私有 Gist 作为存储位置
+
+   详细步骤见 [同步源配置](/guides/zh-cn/sync-sources)。
+
+2. 首次上传
+
+   配置完成后返回弹窗主页，点击`上传书签`即可完成首次同步。
+
+3. 在其他设备恢复
+
+   在其他浏览器安装 CloudLeaf，配置**同一个同步源**，点击`下载书签`即可恢复书签。
+
+</Steps>
+
+---
+
+后续操作（导出、导入、预览、多同步源等）详见 [使用指南](/guides/zh-cn/usage)。

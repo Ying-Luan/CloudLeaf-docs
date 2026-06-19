@@ -1,50 +1,55 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: Welcome to CloudLeaf
+description: Browser Bookmark Cloud Sync Extension.
 template: splash # Remove or comment out this line to display the site sidebar on this page.
 hero:
   title: |
-    Welcome to Starlight with
+    Welcome to <br>
     <span
       class="font-black text-transparent
-        bg-clip-text bg-gradient-to-b
+        bg-clip-text bg-linear-to-b
         from-accent-700 to-accent-400
         dark:from-accent-500 dark:to-accent-200"
     >
-      Tailwind
+      CloudLeaf
     </span>
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Browser Bookmark Cloud Sync Extension.
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/icon.png
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Quick start
+      link: /guides/quick-start/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: View on GitHub
+      link: https://github.com/Ying-Luan/CloudLeaf
       icon: external
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## Why CloudLeaf?
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="Cross-Browser Support" icon="puzzle">
+		Fully supports `Chrome`, `Edge`, and `Firefox`.
 	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
+	<Card title="Upload to GitHub Gist" icon="github">
+		Sync bookmarks to your private Gist.
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="Upload via WebDAV" icon="server">
+		Sync bookmarks to any WebDAV-compatible cloud storage (Nutstore, etc.).
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
+	<Card title="Export to Local File" icon="download">
+		Download bookmarks as JSON file.
 	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	<Card title="Import from Cloud/Local" icon="add-document">
+		Restore bookmarks from Gist, WebDAV, or local file.
+	</Card>
+  <Card title="Conflict Detection" icon="warning">
+		Prevent accidental overwrites when cloud is newer.
+	</Card>
+  <Card title="Preview Mode" icon="magnifier">
+		View cloud bookmarks before importing.
 	</Card>
 </CardGrid>

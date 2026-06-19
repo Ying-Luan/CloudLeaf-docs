@@ -1,0 +1,141 @@
+---
+title: 开发指引
+description: 项目概览、贡献指南与关于作者
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+
+## 项目概览
+
+### 技术栈
+
+| 类别 | 技术 |
+| ------ | ------ |
+| 框架 | [Plasmo](https://www.plasmo.com/) |
+| UI | React + Tailwind CSS v4 |
+| 语言 | TypeScript |
+| 状态管理 | Zustand + Immer |
+| 持久化 | @plasmohq/storage |
+
+### 本地搭建
+
+```bash
+git clone https://github.com/Ying-Luan/CloudLeaf.git
+cd CloudLeaf
+npm install
+
+# 运行开发服务器
+npm run dev          # Chrome
+npm run dev:edge     # Microsoft Edge
+npm run dev:firefox  # Firefox
+
+# 构建生产版本
+npm run build          # Chrome
+npm run build:edge     # Microsoft Edge
+npm run build:firefox  # Firefox
+
+# 打包发布文件
+npm run package          # Chrome
+npm run package:edge     # Microsoft Edge
+npm run package:firefox  # Firefox
+```
+
+### 目录结构
+
+<FileTree>
+
+- .github
+  - workflows/                 CI 工作流
+- assets
+  - _locales
+    - en/                      英文翻译
+    - zh_CN/                   中文翻译
+- scripts/                     构建辅助脚本
+- src
+  - components/                UI 组件
+  - constants/                 常量定义
+  - core
+    - bookmark/                浏览器书签树读写
+    - sync
+      - cloud/                 云端同步编排
+      - local/                 本地文件同步编排
+      - utils/                 同步状态对比工具
+  - hooks/                     React Hooks
+  - i18n/                      国际化封装
+  - options/                   设置页入口
+  - popup/                     弹窗入口
+  - providers
+    - base/                    提供者基类
+    - gist/                    GitHub Gist 提供者
+    - http/                    HTTP 提供者基类
+    - local/                   本地文件提供者
+    - webdav/                  WebDAV 提供者
+  - sidepanel/                 侧边栏入口
+  - store/                     状态管理和本地存储
+  - tabs/                      开发调试页
+  - types/                     类型定义
+  - utils/                     工具函数
+- .gitignore
+- .prettierrc.mjs
+- env.d.ts
+- eslint.config.mts
+- LICENSE
+- package-lock.json            依赖锁定
+- package.json                 项目配置
+- playwright.config.ts
+- postcss.config.mjs
+- PRIVACY.md
+- PRIVACY_zh.md
+- README.md
+- README_zh.md
+- tsconfig.json
+
+</FileTree>
+
+### 架构
+
+```text
+弹窗 / 侧边栏 / 设置页（UI）
+  └── hooks/                   状态与副作用封装
+      └── core/sync/           同步编排（cloud / local）
+          └── providers/       存储后端（Gist / WebDAV / Local）
+              └── BaseProvider  → HttpProvider  → 具体实现
+```
+
+## 贡献指南
+
+我们欢迎任何形式的贡献！无论是向[代码仓库](https://github.com/Ying-Luan/CloudLeaf)还是[文档仓库](https://github.com/Ying-Luan/CloudLeaf-docs)提交 Issue、Pull Request，或是参与讨论，都非常感谢。
+
+### 提 Issue
+
+在 [GitHub Issues](https://github.com/Ying-Luan/CloudLeaf/issues) 提交，请包含：
+
+- 浏览器及版本
+- 操作步骤
+- 预期与实际表现
+
+### 提 Pull Request
+
+1. Fork 仓库
+2. 创建新分支
+3. 确保 npm run lint 通过
+4. 提交 PR，描述改动内容
+
+## 关于作者
+
+<div class="flex gap-12 flex-wrap justify-center items-start not-content">
+  <div class="flex flex-col items-center gap-3">
+    <img src="https://github.com/Ying-Luan.png" width="120" class="rounded-full" />
+    <div class="text-center">
+      <strong>Ying Luan</strong><br/>
+      <a href="https://github.com/Ying-Luan">GitHub</a> · <a href="mailto:3433800035@qq.com">邮箱</a>
+    </div>
+  </div>
+  <div class="flex flex-col items-center gap-3">
+    <img src="https://github.com/KamikazEr101.png" width="120" class="rounded-full" />
+    <div class="text-center">
+      <strong>KamikazEr101</strong><br/>
+      <a href="https://github.com/KamikazEr101">GitHub</a> · <a href="mailto:1305990365@qq.com">邮箱</a>
+    </div>
+  </div>
+</div>
