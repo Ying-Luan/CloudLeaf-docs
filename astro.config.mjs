@@ -67,6 +67,9 @@ export default defineConfig({
 			components: {
 				Footer: './src/components/ConditionalFooter.astro',
 			},
+			// Footer
+			lastUpdated: true,
+			editLink: { baseUrl: 'https://github.com/Ying-Luan/CloudLeaf-docs/edit/master/', },
 		}),
 	],
 	vite: {
