@@ -1,0 +1,28 @@
+---
+interface Props {
+  /** The author's name */
+  name: string;
+  /** The author's GitHub username */
+  github: string;
+  /** The author's email address */
+  email: string;
+  /** The label for the email link */
+  emailLabel: string;
+}
+
+const { name, github, email, emailLabel } = Astro.props;
+---
+
+<div class="flex flex-col items-center gap-3">
+  <img
+    src={`https://github.com/${github}.png`}
+    width="120"
+    class="rounded-full"
+  />
+  <div class="text-center">
+    <strong>{name}</strong><br />
+    <a href={`https://github.com/${github}`}>GitHub</a> · <a
+      href={`mailto:${email}`}>{emailLabel}</a
+    >
+  </div>
+</div>

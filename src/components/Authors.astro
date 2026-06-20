@@ -1,0 +1,33 @@
+---
+import Author from "./Author.astro";
+
+/**
+ * The languages supported for author information.
+ *
+ * * `en` - English
+ * * `zh-CN` - Chinese (Simplified)
+ */
+type Lang = "en" | "zh-CN";
+
+interface Props {
+  /** The language for the author information */
+  lang: Lang;
+}
+
+const emailLabels: Record<Lang, string> = {
+  en: "Email",
+  "zh-CN": "邮箱",
+};
+
+const { lang = "en" } = Astro.props;
+const emailLabel = emailLabels[lang];
+
+const authors = [
+  { name: "Ying Luan", github: "Ying-Luan", email: "3433800035@qq.com" },
+  { name: "KamikazEr101", github: "KamikazEr101", email: "1305990365@qq.com" },
+];
+---
+
+<div class="flex gap-12 flex-wrap justify-center items-start not-content">
+  {authors.map((author) => <Author {...author} emailLabel={emailLabel} />)}
+</div>

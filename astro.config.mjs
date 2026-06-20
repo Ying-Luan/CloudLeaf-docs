@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://cloudleaf.yingluan.cc/',
 	integrations: [
 		starlight({
 			title: 'CloudLeaf',
@@ -35,9 +36,9 @@ export default defineConfig({
 							slug: 'guides/usage'
 						},
 						{
-							label: 'Sync sources configuration',
+							label: 'Sync sources',
 							translations: {
-								'zh-CN': '同步源配置',
+								'zh-CN': '同步源',
 							},
 							slug: 'guides/sync-sources'
 						},
