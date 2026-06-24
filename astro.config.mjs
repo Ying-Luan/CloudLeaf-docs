@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import tailwindcss from '@tailwindcss/vite';
+import starlightLandingFooter from 'starlight-landing-footer';
 
 // https://astro.build/config
 export default defineConfig({
@@ -64,9 +65,7 @@ export default defineConfig({
 					lang: 'zh-CN',
 				},
 			},
-			components: {
-				Footer: './src/components/ConditionalFooter.astro',
-			},
+			plugins: [starlightLandingFooter()],
 			// Footer
 			lastUpdated: true,
 			editLink: { baseUrl: 'https://github.com/Ying-Luan/CloudLeaf-docs/edit/master/', },
